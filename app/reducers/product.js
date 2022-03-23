@@ -1,59 +1,25 @@
 import types from '../actions/types'
 
 /*
-* Carga de productos en el store
+* Carga de un producto en el store
 */
-const load = (action) => {
-  return action.products || []
+const set = (action) => {
+  return action.product || null
 }
 
 /*
-* Agrega un producto al store
+* Elimina el producto del store
 */
-const add = (state, action) => {
-  let newState = state
-  if (action.product) {
-    newState.push(action.product)
-  }
-  return newState
-}
-
-/*
-* Actualiza un producto del store
-*/
-const update = (state, action) => {
-  let newState = state
-  const productIndex = newState.findIndex(product => product._id === action.product._id)
-
-  if (productIndex !== -1) {
-    newState[productIndex] = action.product
-  }
-  return newState
-}
-
-/*
-* Actualiza un producto del store
-*/
-const remove = (state, action) => {
-  let newState = state
-  const productIndex = newState.findIndex(product => product._id === action._id)
-
-  if (productIndex !== -1) {
-    newState.splice(productIndex, 1)
-  }
-  return newState
+const remove = () => {
+  return null
 }
 
 const productReducer = (state = [], action) => {
   switch (action.type) {
-    case types.PRODUCT.LOAD:
-      return load(action)
-    case types.PRODUCT.ADD:
-      return add(state, action)
-    case types.PRODUCT.UPDATE:
-      return update(state, action)
+    case types.PRODUCT.SET:
+      return set(action)
     case types.PRODUCT.REMOVE:
-      return remove(state, action)
+      return remove()
     default:
       return state
   }

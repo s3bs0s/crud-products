@@ -1,22 +1,31 @@
 import types from './types'
 
 const creators = {
-  PRODUCT: {
+  PRODUCTS: {
     load: products => ({
-      type: types.PRODUCT.LOAD,
+      type: types.PRODUCTS.LOAD,
       products
     }),
     add: product => ({
-      type: types.PRODUCT.ADD,
+      type: types.PRODUCTS.ADD,
       product
     }),
     update: product => ({
-      type: types.PRODUCT.UPDATE,
+      type: types.PRODUCTS.UPDATE,
       product
     }),
     remove: _id => ({
-      type: types.PRODUCT.REMOVE,
+      type: types.PRODUCTS.REMOVE,
       _id
+    })
+  },
+  PRODUCT: {
+    set: product => ({
+      type: types.PRODUCT.SET,
+      product
+    }),
+    remove: () => ({
+      type: types.PRODUCT.REMOVE
     })
   }
 }

@@ -1,0 +1,189 @@
+$colorDefault: #343a40;
+$colorSuccess: #319961;
+$colorInfo: #325e78;
+$colorDanger: #963f3c;
+$colorWarning: #ac7835;
+$colorPurple: #6a3278;
+
+.groupButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .btn {
+    flex-grow: 1;
+  }
+}
+
+.btn {
+  background: #ababab;
+  color: #FFF;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 8px;
+  transition: opacity 300ms ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btn.default {
+  background: $colorDefault;
+}
+
+.btn.success {
+  background: $colorSuccess;
+}
+
+.btn.info {
+  background: $colorInfo;
+}
+
+.btn.danger {
+  background: $colorDanger;
+}
+
+.btn.warning {
+  background: $colorWarning;
+}
+
+.btn.purple {
+  background: $colorPurple;
+}
+
+.groupFields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .fieldContainer {
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 8px 10px;
+
+  p {
+    font-size: 16px;
+  }
+
+  select,
+  input,
+  textarea {
+    width: 100%;
+    outline: none;
+    background: #f5f5f5;
+    border-radius: 3px;
+    border: solid 1.5px #DDDDDD;
+    border-bottom: solid 1.5px #b9b9b9;
+    padding: 10px 20px;
+    transition: border 200ms ease;
+    color: #242424;
+    font-size: 18px;
+    font-family: 'Calibri Light';
+
+    &:hover {
+      border: solid 1.5px #a5a5a5;
+    }
+
+    &:focus {
+      border: solid 1.5px #325f79;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        border: solid 1.5px #ABABAB;
+      }
+    }
+  }
+
+  .textarea {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .select {
+    width: 100%;
+    position: relative;
+
+    select {
+      appearance: none;
+      padding-right: 40px !important;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 14px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      pointer-events: none;
+
+      path {
+        color: #686868;
+      }
+    }
+  }
+
+  .footer {
+    margin: 6px 0 0 6px;
+  }
+
+  .footer,
+  .footer * {
+    font-size: 16px;
+  }
+}
+
+.bgInfo, .bgInfo *,
+.bgSuccess, .bgSuccess *,
+.bgDanger, .bgDanger *,
+.bgWarning, .bgWarning *,
+.bgPurple, .bgPurple *,
+.bgDefault, .bgDefault * {
+  color: #FFF;
+}
+
+.bgDefault {
+  background: $colorDefault;
+}
+
+.bgInfo {
+  background: $colorInfo;
+}
+
+.bgSuccess {
+  background: $colorSuccess;
+}
+
+.bgDanger {
+  background: $colorDanger;
+}
+
+.bgWarning {
+  background: $colorWarning;
+}
+
+.bgPurple {
+  background: $colorPurple;
+}

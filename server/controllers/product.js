@@ -22,7 +22,7 @@ const getProduct = async ({ params: { _id } }, res) => {
 
 const createProduct = async ({ body }, res) => {
   try {
-    const { result, field } = validate(body, ['name', 'cost'])
+    const { result, field } = validate(body, ['name', 'cost', 'category'])
     if (!result) {
       throw `El campo "${field}" es requerido`
     }
@@ -36,7 +36,7 @@ const createProduct = async ({ body }, res) => {
 
 const updateProduct = async ({ body }, res) => {
   try {
-    const { result, field } = validate(body, ['_id', 'name', 'cost'])
+    const { result, field } = validate(body, ['_id', 'name', 'cost', 'category'])
     if (!result) {
       throw `El campo "${field}" es requerido`
     }

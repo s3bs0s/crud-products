@@ -11,7 +11,8 @@ app.use(express.json())
 app.use('/api/products', require('./server/routes/product'))
 
 // Server
-const PORT = 3000
-app.listen(PORT, () => {
+const HOST = process.env.HOST || '0.0.0.0'
+const PORT = process.env.PORT || 3000
+app.listen(PORT, HOST, () => {
   console.log('Server listen on port', PORT)
 })

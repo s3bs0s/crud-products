@@ -12,7 +12,7 @@ npm install
 
 ## Uso
 
-Construya la aplicación web y luego ejecute el servidor
+Construya la aplicación web solo si se han realizado nuevos cambios y luego ejecute el servidor
 
 ```bash
 npm run build
